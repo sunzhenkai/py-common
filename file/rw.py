@@ -12,3 +12,11 @@ def read_lines(fn: str) -> List[str]:
             result.append(line)
             line = f.readline()
     return result
+
+
+def load_multiple_json(fn: str):
+    result = []
+    lines = read_lines(fn)
+    for line in lines:
+        result.append(json.loads(line))
+    return result
